@@ -1,7 +1,7 @@
 import pygame
 from logger import log_state
 from constants import *
-import player
+from player import Player
 
 
 def main():
@@ -13,8 +13,12 @@ def main():
     
     running = True
     dt = 0
-    p1 = player.Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
-    
+    updateable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    Player.containers = (updateable, drawable)
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+   
     
     while running:
         
@@ -24,8 +28,12 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
                 
+        updateable.update(dt)
         screen.fill("yellow")
-        p1.draw(screen)
+        for obj in drawable:
+            obj.draw(screen)
+        
+        
         
         pygame.display.flip()
         dt = clock.tick(60)/1000 # delay game to 1/60 of second to prevent resource consumption and control frame rate
