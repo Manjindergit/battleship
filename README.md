@@ -1,23 +1,17 @@
+
 # Battleship
 
 A classic Battleship game implementation.
 
-## Overview
-
-This project implements the traditional Battleship naval combat game where players guess coordinates to locate and sink opponent ships.
-
 ## Features
 
-- Two-player gameplay
-- Grid-based board system
-- Ship placement and targeting
-- Game state tracking
-
-## Getting Started
+- Player vs Computer gameplay
+- Strategic ship placement
+- Hit/miss tracking
+- Win conditions
 
 ### Prerequisites
-
-- [List your language/runtime requirements]
+- Python 3.7+
 
 ### Installation
 
@@ -29,28 +23,15 @@ cd battleship
 ### Usage
 
 ```bash
-[Add usage instructions]
+python battleship.py
 ```
 
-## Rules
+## How to Play
 
-- Players place ships on a grid
-- Take turns guessing opponent ship locations
-- First player to sink all opponent ships wins
-
-## Project Structure
-
-```
-battleship/
-├── src/
-├── tests/
-└── README.md
-```
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request.
+1. Place your ships on the grid
+2. Take turns guessing opponent coordinates
+3. First to sink all ships wins
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT
